@@ -15,7 +15,7 @@ class Page2 extends StatelessWidget {
       child: Column(
         children: [
           SelectableText(
-            SiteTexts.page2Title,
+            'Um pouco mais sobre mim',
             style: SiteTextStyles.h3Bold.copyWith(color: SiteColors.primary),
             textAlign: TextAlign.center,
           ),
