@@ -72,4 +72,18 @@ class SiteTextStyles {
     fontSize: 16,
     height: 1.5,
   );
+
+  static final sNormal = GoogleFonts.openSans(
+    color: SiteColors.light,
+    fontWeight: FontWeight.w400,
+    fontSize: 14,
+    height: 1.5,
+  );
+
+  static final sBold = GoogleFonts.openSans(
+    color: SiteColors.light,
+    fontWeight: FontWeight.w700,
+    fontSize: 14,
+    height: 1.5,
+  );
 }
