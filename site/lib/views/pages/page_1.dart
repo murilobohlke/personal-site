@@ -6,64 +6,139 @@ import 'package:site/theme/site_text_styles.dart';
 import '../../widgets/custom_text_button.dart';
 
 class Page1 extends StatelessWidget {
-  const Page1({Key? key}) : super(key: key);
+  final bool smallPage;
+
+  const Page1({Key? key, required this.smallPage}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
+
     return ConstrainedBox(
       constraints: const BoxConstraints(minHeight: 700),
-      child: Stack(
+      child: smallPage
+          ? buildSmallPage()
+          : Stack(
+              children: [
+                Image.asset(
+                  SiteAssets.imageBackground,
+                  height: size.height * 0.9,
+                  width: double.infinity,
+                  fit: BoxFit.fill,
+                ),
+                tabBar(),
+                Positioned.fill(
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        SelectableText(
+                          'MURILO BÖHLKE',
+                          style: SiteTextStyles.h1Bold,
+                        ),
+                        const SizedBox(height: 10),
+                        SelectableText(
+                          'Desenvolvedor Mobile',
+                          style: SiteTextStyles.h4Normal,
+                        ),
+                        const SizedBox(height: 40),
+                        ElevatedButton(
+                          child: Text(
+                            'Conhecer',
+                            style: SiteTextStyles.h4Normal
+                                .copyWith(fontWeight: FontWeight.w300),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            padding: const EdgeInsets.symmetric(
+                              vertical: 15,
+                              horizontal: 80,
+                            ),
+                            primary: SiteColors.primary,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(50),
+                            ),
+                          ),
+                          onPressed: () {},
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+    );
+  }
+
+  buildSmallPage() => Stack(
         children: [
-          Image.asset(
-            SiteAssets.imageBackground,
-            height: size.height * 0.9,
-            width: double.infinity,
-            fit: BoxFit.fill,
+          Column(
+            children: [
+              Image.asset(
+                SiteAssets.imageBackgroundSmall,
+                height: 750,
+                width: double.infinity,
+                fit: BoxFit.fill,
+              ),
+              Container(
+                height: 16,
+                width: double.infinity,
+                color: SiteColors.primaryLess,
+              ),
+              Container(
+                height: 16,
+                width: double.infinity,
+                color: SiteColors.light,
+              ),
+            ],
           ),
-          tabBar(),
           Positioned.fill(
+            top: 240,
             child: Align(
-              alignment: Alignment.center,
+              alignment: Alignment.topCenter,
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   SelectableText(
                     'MURILO BÖHLKE',
-                    style: SiteTextStyles.h1Bold,
+                    style: SiteTextStyles.h3Bold
+                        .copyWith(color: SiteColors.primary),
                   ),
                   const SizedBox(height: 10),
                   SelectableText(
                     'Desenvolvedor Mobile',
-                    style: SiteTextStyles.h4Normal,
+                    style: SiteTextStyles.h6Normal,
                   ),
                   const SizedBox(height: 40),
-                  ElevatedButton(
-                    child: Text(
-                      'Conhecer',
-                      style: SiteTextStyles.h4Normal
-                          .copyWith(fontWeight: FontWeight.w300),
-                    ),
-                    style: ElevatedButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 15,
-                        horizontal: 80,
-                      ),
-                      primary: SiteColors.primary,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50),
-                      ),
-                    ),
-                    onPressed: () {},
-                  )
                 ],
               ),
             ),
           ),
+          Positioned.fill(
+              bottom: 80,
+              child: Align(
+                alignment: Alignment.bottomCenter,
+                child: ElevatedButton(
+                  child: Text(
+                    'Conhecer',
+                    style: SiteTextStyles.h4Normal
+                        .copyWith(fontWeight: FontWeight.w300),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 15,
+                      horizontal: 80,
+                    ),
+                    primary: SiteColors.primary,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(50),
+                    ),
+                  ),
+                  onPressed: () {},
+                ),
+              ))
         ],
-      ),
-    );
-  }
+      );
 
   tabBar() => Positioned(
         right: 60,

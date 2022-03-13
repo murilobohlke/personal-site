@@ -6,42 +6,69 @@ import 'package:site/theme/site_colors.dart';
 import 'package:site/theme/site_text_styles.dart';
 
 class Page4 extends StatelessWidget {
-  const Page4({Key? key}) : super(key: key);
+  final bool smallPage;
+  const Page4({Key? key, required this.smallPage}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 250, vertical: 50),
+      padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 50),
       color: SiteColors.secondaryLess,
       child: Column(
         children: [
           title(),
           const SizedBox(height: 60),
-          Row(
-            children: [
-              Expanded(
-                child: CarouselSlider(
-                  options: CarouselOptions(
-                    autoPlayInterval: const Duration(seconds: 4),
-                    viewportFraction: 1,
-                    autoPlay: true,
-                    height: 600,
-                    enableInfiniteScroll: true,
-                  ),
-                  items: [Image.asset(SiteAssets.print)],
-                ),
-              ),
-              Expanded(
-                child: Column(
+          smallPage
+              ? Column(
                   children: [
-                    text(),
+                    SizedBox(
+                      width: 300,
+                      child: CarouselSlider(
+                        options: CarouselOptions(
+                          autoPlayInterval: const Duration(seconds: 4),
+                          viewportFraction: 1,
+                          autoPlay: true,
+                          height: 600,
+                          enableInfiniteScroll: true,
+                        ),
+                        items: [Image.asset(SiteAssets.print)],
+                      ),
+                    ),
+                    text(SiteTextStyles.pNormal, SiteTextStyles.pBold),
                     const SizedBox(height: 50),
-                    buttonGooglePlay(),
+                    buttonGooglePlay(175),
                   ],
-                ),
-              )
-            ],
-          )
+                )
+              : Row(
+                  children: [
+                    const Spacer(),
+                    SizedBox(
+                      width: 300,
+                      child: CarouselSlider(
+                        options: CarouselOptions(
+                          autoPlayInterval: const Duration(seconds: 4),
+                          viewportFraction: 1,
+                          autoPlay: true,
+                          height: 600,
+                          enableInfiniteScroll: true,
+                        ),
+                        items: [Image.asset(SiteAssets.print)],
+                      ),
+                    ),
+                    const Spacer(),
+                    Expanded(
+                      flex: 3,
+                      child: Column(
+                        children: [
+                          text(SiteTextStyles.h6Normal, SiteTextStyles.h6Bold),
+                          const SizedBox(height: 50),
+                          buttonGooglePlay(260),
+                        ],
+                      ),
+                    ),
+                    const Spacer(),
+                  ],
+                )
         ],
       ),
     );
@@ -53,24 +80,24 @@ class Page4 extends StatelessWidget {
         textAlign: TextAlign.center,
       );
 
-  text() => SelectableText.rich(
+  text(TextStyle normal, TextStyle bold) => SelectableText.rich(
         TextSpan(
           text: SiteTexts.page4Text1,
-          style: SiteTextStyles.h5Normal,
+          style: normal,
           children: <TextSpan>[
             TextSpan(
               text: SiteTexts.page4Text2,
-              style: SiteTextStyles.h5Bold,
+              style: bold,
             ),
             const TextSpan(text: SiteTexts.page4Text3),
             TextSpan(
               text: SiteTexts.page4Text4,
-              style: SiteTextStyles.h5Bold,
+              style: bold,
             ),
             const TextSpan(text: SiteTexts.page4Text5),
             TextSpan(
               text: SiteTexts.page4Text6,
-              style: SiteTextStyles.h5Bold,
+              style: bold,
             ),
             const TextSpan(text: SiteTexts.page4Text7),
           ],
@@ -78,8 +105,11 @@ class Page4 extends StatelessWidget {
         textAlign: TextAlign.center,
       );
 
-  buttonGooglePlay() => InkWell(
+  buttonGooglePlay(double w) => InkWell(
         onTap: () {},
-        child: Image.asset(SiteAssets.imageGooglePlay),
+        child: Image.asset(
+          SiteAssets.imageGooglePlay,
+          width: w,
+        ),
       );
 }

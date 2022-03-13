@@ -5,8 +5,10 @@ import 'package:site/theme/site_text_styles.dart';
 
 class JobWidget extends StatelessWidget {
   final JobDto job;
+  final bool smallPage;
 
-  const JobWidget(this.job, {Key? key}) : super(key: key);
+  const JobWidget(this.job, {Key? key, this.smallPage = false})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,8 +18,11 @@ class JobWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Align(
-            alignment: Alignment.center,
-            child: Image.asset(job.imageAsset),
+            alignment: smallPage ? Alignment.centerLeft : Alignment.center,
+            child: Image.asset(
+              job.imageAsset,
+              width: smallPage ? 60 : 100,
+            ),
           ),
           const SizedBox(height: 8),
           SelectableText(

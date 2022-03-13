@@ -16,9 +16,12 @@ class CustomTextButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: onPressed,
-      child: Text(
-        label,
-        style: SiteTextStyles.h6Bold,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 10),
+        child: Text(
+          label,
+          style: SiteTextStyles.h6Bold,
+        ),
       ),
     );
   }
