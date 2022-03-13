@@ -16,7 +16,7 @@ class Page2 extends StatelessWidget {
         children: [
           SelectableText(
             SiteTexts.page2Title,
-            style: SiteTextStyles.h3BoldPrimary,
+            style: SiteTextStyles.h3Bold.copyWith(color: SiteColors.primary),
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 60),
@@ -25,21 +25,21 @@ class Page2 extends StatelessWidget {
             child: SelectableText.rich(
               TextSpan(
                 text: SiteTexts.page2Text1,
-                style: SiteTextStyles.pNormalLight,
+                style: SiteTextStyles.pNormal,
                 children: <TextSpan>[
                   TextSpan(
                     text: SiteTexts.page2Text2,
-                    style: SiteTextStyles.pBoldLight,
+                    style: SiteTextStyles.pBold,
                   ),
                   const TextSpan(text: SiteTexts.page2Text3),
                   TextSpan(
                     text: SiteTexts.page2Text4,
-                    style: SiteTextStyles.pBoldLight,
+                    style: SiteTextStyles.pBold,
                   ),
                   const TextSpan(text: SiteTexts.page2Text5),
                   TextSpan(
                     text: SiteTexts.page2Text6,
-                    style: SiteTextStyles.pBoldLight,
+                    style: SiteTextStyles.pBold,
                   ),
                 ],
               ),

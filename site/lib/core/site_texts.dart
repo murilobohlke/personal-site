@@ -8,7 +8,4 @@ class SiteTexts {
   static const String page2Text5 =
       ' formado pela Universidade Federeal de Pelotas e trabalho atualmente com ';
   static const String page2Text6 = 'Flutter.';
-
-  static const String page5footer1 = 'Feito com a elegância do ';
-  static const String page5footer2 = 'Flutter';
 }
