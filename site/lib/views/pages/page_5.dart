@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:site/controllers/site_controller.dart';
 import 'package:site/core/site_assets.dart';
 import 'package:site/theme/site_colors.dart';
 import 'package:site/theme/site_text_styles.dart';
 
 class Page5 extends StatelessWidget {
   final bool smallPage;
-  const Page5({Key? key, required this.smallPage}) : super(key: key);
+  final SiteController controller;
+
+  const Page5({Key? key, required this.smallPage, required this.controller})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,20 +23,31 @@ class Page5 extends StatelessWidget {
           const SizedBox(height: 70),
           buttonWorkTogheter(),
           const SizedBox(height: 75),
-          letsTalk(size),
+          letsTalk(
+            size,
+            smallPage ? SiteTextStyles.h6Normal : SiteTextStyles.h4Normal,
+            smallPage ? SiteTextStyles.h6Bold : SiteTextStyles.h4Bold,
+          ),
           const SizedBox(height: 75),
-          moreInfo(),
+          moreInfo(
+            smallPage ? SiteTextStyles.pNormal : SiteTextStyles.h5Normal,
+            smallPage ? SiteTextStyles.pBold : SiteTextStyles.h5Bold,
+          ),
           const SizedBox(height: 70),
-          footer(),
+          footer(
+            smallPage ? SiteTextStyles.sNormal : SiteTextStyles.pNormal,
+            smallPage ? SiteTextStyles.sBold : SiteTextStyles.pBold,
+          ),
         ],
       ),
     );
   }
 
   buttonWorkTogheter() => ElevatedButton(
-        onPressed: () {},
+        onPressed: controller.openWhatsapp,
         style: ElevatedButton.styleFrom(
-          padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
+          padding: EdgeInsets.symmetric(
+              vertical: smallPage ? 8 : 20, horizontal: smallPage ? 15 : 30),
           primary: SiteColors.tertiary,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(50),
@@ -43,64 +58,55 @@ class Page5 extends StatelessWidget {
           children: [
             Text(
               'Que tal trabalharmos juntos?',
-              style: SiteTextStyles.h6Bold,
+              style: smallPage ? SiteTextStyles.pBold : SiteTextStyles.h6Bold,
             ),
-            const SizedBox(width: 20),
-            const Icon(
+            SizedBox(width: smallPage ? 5 : 20),
+            Icon(
               Icons.arrow_forward,
-              size: 30,
+              size: smallPage ? 20 : 30,
               color: SiteColors.primary,
             ),
           ],
         ),
       );
 
-  letsTalk(Size size) => Padding(
+  letsTalk(Size size, TextStyle normal, TextStyle bold) => Padding(
         padding: const EdgeInsets.symmetric(horizontal: 25),
         child: Row(
-          //mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            if (!smallPage) const Spacer(),
+            if (!smallPage && size.width > 950) const Spacer(),
             if (!smallPage)
               Image.asset(
                 SiteAssets.imageContact,
                 width: size.width * 0.3,
                 fit: BoxFit.contain,
               ),
-            const Spacer(),
+            if (!smallPage) const Spacer(),
             Expanded(
               flex: 4,
               child: Column(
-                //mainAxisSize: MainAxisSize.max,
                 children: [
-                  SizedBox(
-                    //height: 35,
-                    child: SelectableText.rich(
-                      TextSpan(
-                        text: 'Vamos conversar? ',
-                        style: SiteTextStyles.h4Bold
-                            .copyWith(color: SiteColors.primaryLess),
-                        children: <TextSpan>[
-                          TextSpan(
-                            text: 'Entre em ',
-                            style: SiteTextStyles.h4Normal
-                                .copyWith(color: SiteColors.dark),
-                          ),
-                          TextSpan(
-                            text: 'contato',
-                            style: SiteTextStyles.h4Bold
-                                .copyWith(color: SiteColors.secondaryLess),
-                          ),
-                          TextSpan(
-                            text: ' comigo',
-                            style: SiteTextStyles.h4Normal
-                                .copyWith(color: SiteColors.dark),
-                          ),
-                        ],
-                      ),
-                      textAlign: TextAlign.center,
+                  SelectableText.rich(
+                    TextSpan(
+                      text: 'Vamos conversar? ',
+                      style: bold.copyWith(color: SiteColors.primaryLess),
+                      children: <TextSpan>[
+                        TextSpan(
+                          text: 'Entre em ',
+                          style: normal.copyWith(color: SiteColors.dark),
+                        ),
+                        TextSpan(
+                          text: 'contato',
+                          style: bold.copyWith(color: SiteColors.secondaryLess),
+                        ),
+                        TextSpan(
+                          text: ' comigo',
+                          style: normal.copyWith(color: SiteColors.dark),
+                        ),
+                      ],
                     ),
+                    textAlign: TextAlign.center,
                   ),
                   const SizedBox(
                     height: 15,
@@ -108,16 +114,15 @@ class Page5 extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Icon(
+                      Icon(
                         Icons.phone,
                         color: SiteColors.primaryMore,
-                        size: 50,
+                        size: smallPage ? 30 : 50,
                       ),
                       const SizedBox(width: 10),
                       SelectableText(
                         '(53) 98428 8037',
-                        style: SiteTextStyles.h5Normal
-                            .copyWith(color: SiteColors.secondary),
+                        style: normal.copyWith(color: SiteColors.secondary),
                       )
                     ],
                   ),
@@ -125,38 +130,36 @@ class Page5 extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Icon(
+                      Icon(
                         Icons.mail_outline,
                         color: SiteColors.primaryMore,
-                        size: 50,
+                        size: smallPage ? 30 : 50,
                       ),
                       const SizedBox(width: 10),
                       SelectableText(
                         'murilosbohlke@gmail.com',
-                        style: SiteTextStyles.h5Normal
-                            .copyWith(color: SiteColors.secondary),
+                        style: normal.copyWith(color: SiteColors.secondary),
                       )
                     ],
                   ),
                 ],
               ),
             ),
-            const Spacer(),
+            if (size.width > 950) const Spacer(),
           ],
         ),
       );
 
-  moreInfo() => Column(
+  moreInfo(TextStyle normal, TextStyle bold) => Column(
         children: [
           SelectableText.rich(
             TextSpan(
               text: 'Mais ',
-              style: SiteTextStyles.h5Normal.copyWith(color: SiteColors.dark),
+              style: normal.copyWith(color: SiteColors.dark),
               children: <TextSpan>[
                 TextSpan(
                   text: 'informações',
-                  style: SiteTextStyles.h5Bold
-                      .copyWith(color: SiteColors.primaryLess),
+                  style: bold.copyWith(color: SiteColors.primaryLess),
                 ),
                 const TextSpan(text: ' sobre mim'),
               ],
@@ -170,22 +173,22 @@ class Page5 extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               IconButton(
-                onPressed: () {},
-                iconSize: 50,
+                onPressed: controller.launchLinkedin,
+                iconSize: smallPage ? 30 : 50,
                 color: SiteColors.tertiary,
                 icon: const Icon(FontAwesomeIcons.linkedin),
               ),
-              const SizedBox(width: 40),
+              SizedBox(width: smallPage ? 20 : 40),
               IconButton(
-                onPressed: () {},
-                iconSize: 50,
+                onPressed: controller.launchFigma,
+                iconSize: smallPage ? 30 : 50,
                 color: SiteColors.tertiary,
                 icon: const Icon(FontAwesomeIcons.figma),
               ),
-              const SizedBox(width: 40),
+              SizedBox(width: smallPage ? 20 : 40),
               IconButton(
-                onPressed: () {},
-                iconSize: 50,
+                onPressed: controller.launchGithub,
+                iconSize: smallPage ? 30 : 50,
                 color: SiteColors.tertiary,
                 icon: const Icon(FontAwesomeIcons.github),
               ),
@@ -194,7 +197,7 @@ class Page5 extends StatelessWidget {
         ],
       );
 
-  footer() => Container(
+  footer(TextStyle normal, TextStyle bold) => Container(
         color: SiteColors.secondaryLess,
         height: 45,
         child: Row(
@@ -204,11 +207,11 @@ class Page5 extends StatelessWidget {
               child: SelectableText.rich(
                 TextSpan(
                   text: 'Feito com a elegância do ',
-                  style: SiteTextStyles.pNormal,
+                  style: normal,
                   children: <TextSpan>[
                     TextSpan(
                       text: 'Flutter',
-                      style: SiteTextStyles.pBold,
+                      style: bold,
                     ),
                   ],
                 ),

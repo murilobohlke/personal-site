@@ -13,4 +13,8 @@ class ResponsiveHelper {
     return MediaQuery.of(context).size.width > 750 &&
         MediaQuery.of(context).size.width < 1200;
   }
+
+  static bool isMinimumScreen(BuildContext context) {
+    return MediaQuery.of(context).size.width < 350;
+  }
 }

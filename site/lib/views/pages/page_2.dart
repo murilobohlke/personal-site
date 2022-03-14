@@ -5,7 +5,9 @@ import 'package:site/theme/site_colors.dart';
 import 'package:site/theme/site_text_styles.dart';
 
 class Page2 extends StatelessWidget {
-  const Page2({Key? key}) : super(key: key);
+  final bool smallPage;
+
+  const Page2({Key? key, required this.smallPage}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +18,9 @@ class Page2 extends StatelessWidget {
         children: [
           SelectableText(
             'Um pouco mais sobre mim',
-            style: SiteTextStyles.h3Bold.copyWith(color: SiteColors.primary),
+            style: smallPage
+                ? SiteTextStyles.h5Bold.copyWith(color: SiteColors.primary)
+                : SiteTextStyles.h3Bold.copyWith(color: SiteColors.primary),
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 60),

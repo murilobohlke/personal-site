@@ -5,9 +5,14 @@ import 'package:site/core/site_texts.dart';
 import 'package:site/theme/site_colors.dart';
 import 'package:site/theme/site_text_styles.dart';
 
+import '../../controllers/site_controller.dart';
+
 class Page4 extends StatelessWidget {
   final bool smallPage;
-  const Page4({Key? key, required this.smallPage}) : super(key: key);
+  final SiteController controller;
+
+  const Page4({Key? key, required this.smallPage, required this.controller})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,12 +22,12 @@ class Page4 extends StatelessWidget {
       child: Column(
         children: [
           title(),
-          const SizedBox(height: 60),
+          SizedBox(height: smallPage ? 0 : 60),
           smallPage
               ? Column(
                   children: [
                     SizedBox(
-                      width: 300,
+                      width: 250,
                       child: CarouselSlider(
                         options: CarouselOptions(
                           autoPlayInterval: const Duration(seconds: 4),
@@ -76,7 +81,9 @@ class Page4 extends StatelessWidget {
 
   title() => SelectableText(
         'Meu portifólio',
-        style: SiteTextStyles.h3Bold.copyWith(color: SiteColors.primary),
+        style: smallPage
+            ? SiteTextStyles.h5Bold.copyWith(color: SiteColors.primary)
+            : SiteTextStyles.h3Bold.copyWith(color: SiteColors.primary),
         textAlign: TextAlign.center,
       );
 
@@ -106,7 +113,7 @@ class Page4 extends StatelessWidget {
       );
 
   buttonGooglePlay(double w) => InkWell(
-        onTap: () {},
+        onTap: controller.launchGooglePlay,
         child: Image.asset(
           SiteAssets.imageGooglePlay,
           width: w,

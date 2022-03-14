@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:site/core/site_assets.dart';
 import 'package:site/theme/site_colors.dart';
 import 'package:site/theme/site_text_styles.dart';
@@ -33,11 +34,16 @@ class Page1 extends StatelessWidget {
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
+                        Lottie.asset(
+                          SiteAssets.lottieCoding,
+                          height: 350,
+                          width: 350,
+                        ),
+                        const SizedBox(height: 40),
                         SelectableText(
                           'MURILO BÖHLKE',
                           style: SiteTextStyles.h1Bold,
                         ),
-                        const SizedBox(height: 10),
                         SelectableText(
                           'Desenvolvedor Mobile',
                           style: SiteTextStyles.h4Normal,
@@ -93,23 +99,27 @@ class Page1 extends StatelessWidget {
             ],
           ),
           Positioned.fill(
-            top: 240,
+            top: 50,
             child: Align(
               alignment: Alignment.topCenter,
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
+                  Lottie.asset(
+                    SiteAssets.lottieCoding,
+                    height: 250,
+                    width: 250,
+                  ),
+                  const SizedBox(height: 20),
                   SelectableText(
                     'MURILO BÖHLKE',
                     style: SiteTextStyles.h3Bold
                         .copyWith(color: SiteColors.primary),
                   ),
-                  const SizedBox(height: 10),
                   SelectableText(
                     'Desenvolvedor Mobile',
                     style: SiteTextStyles.h6Normal,
                   ),
-                  const SizedBox(height: 40),
                 ],
               ),
             ),
@@ -121,13 +131,13 @@ class Page1 extends StatelessWidget {
                 child: ElevatedButton(
                   child: Text(
                     'Conhecer',
-                    style: SiteTextStyles.h4Normal
+                    style: SiteTextStyles.h5Normal
                         .copyWith(fontWeight: FontWeight.w300),
                   ),
                   style: ElevatedButton.styleFrom(
                     padding: const EdgeInsets.symmetric(
-                      vertical: 15,
-                      horizontal: 80,
+                      vertical: 10,
+                      horizontal: 60,
                     ),
                     primary: SiteColors.primary,
                     shape: RoundedRectangleBorder(
