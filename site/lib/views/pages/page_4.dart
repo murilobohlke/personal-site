@@ -65,7 +65,10 @@ class Page4 extends StatelessWidget {
                       flex: 3,
                       child: Column(
                         children: [
-                          text(SiteTextStyles.h6Normal, SiteTextStyles.h6Bold),
+                          text(
+                            SiteTextStyles.h6Normal.copyWith(height: 1.7),
+                            SiteTextStyles.h6Bold.copyWith(height: 1.7),
+                          ),
                           const SizedBox(height: 50),
                           buttonGooglePlay(260),
                         ],

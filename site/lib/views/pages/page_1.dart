@@ -8,8 +8,21 @@ import '../../widgets/custom_text_button.dart';
 
 class Page1 extends StatelessWidget {
   final bool smallPage;
+  final VoidCallback toMeet;
+  final VoidCallback about;
+  final VoidCallback carrer;
+  final VoidCallback portfolio;
+  final VoidCallback contact;
 
-  const Page1({Key? key, required this.smallPage}) : super(key: key);
+  const Page1({
+    Key? key,
+    required this.smallPage,
+    required this.toMeet,
+    required this.about,
+    required this.carrer,
+    required this.portfolio,
+    required this.contact,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +78,7 @@ class Page1 extends StatelessWidget {
                               borderRadius: BorderRadius.circular(50),
                             ),
                           ),
-                          onPressed: () {},
+                          onPressed: toMeet,
                         )
                       ],
                     ),
@@ -144,7 +157,7 @@ class Page1 extends StatelessWidget {
                       borderRadius: BorderRadius.circular(50),
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: toMeet,
                 ),
               ))
         ],
@@ -156,22 +169,22 @@ class Page1 extends StatelessWidget {
         child: Row(
           children: [
             CustomTextButton(
-              onPressed: () {},
+              onPressed: about,
               label: 'SOBRE',
             ),
-            const SizedBox(width: 60),
+            const SizedBox(width: 30),
             CustomTextButton(
-              onPressed: () {},
+              onPressed: carrer,
               label: 'CARREIRA',
             ),
-            const SizedBox(width: 60),
+            const SizedBox(width: 30),
             CustomTextButton(
-              onPressed: () {},
+              onPressed: portfolio,
               label: 'PORTIFÓLIO',
             ),
-            const SizedBox(width: 60),
+            const SizedBox(width: 30),
             CustomTextButton(
-              onPressed: () {},
+              onPressed: contact,
               label: 'CONTATO',
             ),
           ],

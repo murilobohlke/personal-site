@@ -20,7 +20,7 @@ class CustomTextButton extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 10),
         child: Text(
           label,
-          style: SiteTextStyles.h6Bold,
+          style: SiteTextStyles.pBold,
         ),
       ),
     );

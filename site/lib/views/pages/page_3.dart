@@ -45,54 +45,51 @@ class Page3 extends StatelessWidget {
             borderRadius: BorderRadius.circular(5)),
       );
 
-  carrerSmallPage() => Row(
+  carrerSmallPage() => Stack(
+        alignment: Alignment.centerLeft,
         children: [
-          SizedBox(
-            width: 30,
-            child: Stack(
-              alignment: Alignment.center,
-              children: const [
-                DottedLine(
-                  direction: Axis.vertical,
-                  lineLength: 1000,
-                  lineThickness: 3,
-                  dashLength: 15,
-                  dashColor: SiteColors.secondaryLess,
-                  dashRadius: 5,
-                  dashGapLength: 10,
-                  dashGapColor: Colors.transparent,
-                  dashGapRadius: 0.0,
-                ),
-                Positioned(
-                  top: 80,
-                  child: IndicatorWidget(number: '1'),
-                ),
-                Positioned(
-                  top: 420,
-                  child: IndicatorWidget(number: '2'),
-                ),
-                Positioned(
-                  top: 730,
-                  child: IndicatorWidget(
-                    number: '3',
-                    isActive: true,
-                  ),
-                ),
-              ],
+          const Positioned(
+            left: 12.5,
+            top: 0,
+            child: DottedLine(
+              direction: Axis.vertical,
+              lineLength: 1000,
+              lineThickness: 3,
+              dashLength: 15,
+              dashColor: SiteColors.secondaryLess,
+              dashRadius: 5,
+              dashGapLength: 10,
+              dashGapColor: Colors.transparent,
+              dashGapRadius: 0.0,
             ),
           ),
-          const SizedBox(width: 20),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                JobWidget(jobDummy[0], smallPage: true),
-                const SizedBox(height: 40),
-                JobWidget(jobDummy[1], smallPage: true),
-                const SizedBox(height: 40),
-                JobWidget(jobDummy[2], smallPage: true),
-              ],
-            ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  const IndicatorWidget(number: '1'),
+                  const SizedBox(width: 25),
+                  Expanded(child: JobWidget(jobDummy[0], smallPage: true)),
+                ],
+              ),
+              const SizedBox(height: 40),
+              Row(
+                children: [
+                  const IndicatorWidget(number: '2'),
+                  const SizedBox(width: 25),
+                  Expanded(child: JobWidget(jobDummy[1], smallPage: true)),
+                ],
+              ),
+              const SizedBox(height: 40),
+              Row(
+                children: [
+                  const IndicatorWidget(number: '3', isActive: true),
+                  const SizedBox(width: 25),
+                  Expanded(child: JobWidget(jobDummy[2], smallPage: true)),
+                ],
+              ),
+            ],
           ),
         ],
       );

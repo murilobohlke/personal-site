@@ -15,6 +15,11 @@ class MySite extends StatefulWidget {
 }
 
 class _MySiteState extends State<MySite> {
+  final aboutKey = GlobalKey();
+  final carrerKey = GlobalKey();
+  final portfolioKey = GlobalKey();
+  final contactKey = GlobalKey();
+
   late SiteController controller;
 
   @override
@@ -24,20 +29,57 @@ class _MySiteState extends State<MySite> {
     super.initState();
   }
 
+  void toMeet() => Scrollable.ensureVisible(
+        aboutKey.currentContext!,
+        curve: Curves.ease,
+        duration: const Duration(milliseconds: 500),
+      );
+
+  void toCarrer() => Scrollable.ensureVisible(
+        carrerKey.currentContext!,
+        curve: Curves.ease,
+        duration: const Duration(milliseconds: 500),
+      );
+  void toPortfolio() => Scrollable.ensureVisible(
+        portfolioKey.currentContext!,
+        curve: Curves.ease,
+        duration: const Duration(milliseconds: 500),
+      );
+  void toContact() => Scrollable.ensureVisible(
+        contactKey.currentContext!,
+        curve: Curves.ease,
+        duration: const Duration(milliseconds: 500),
+      );
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Page1(smallPage: ResponsiveHelper.isSmallScreen(context)),
-          Page2(smallPage: ResponsiveHelper.isSmallScreen(context)),
-          Page3(smallPage: ResponsiveHelper.isSmallScreen(context)),
+          Page1(
+            smallPage: ResponsiveHelper.isSmallScreen(context),
+            toMeet: toMeet,
+            about: toMeet,
+            carrer: toCarrer,
+            portfolio: toPortfolio,
+            contact: toContact,
+          ),
+          Page2(
+            key: aboutKey,
+            smallPage: ResponsiveHelper.isSmallScreen(context),
+          ),
+          Page3(
+            key: carrerKey,
+            smallPage: ResponsiveHelper.isSmallScreen(context),
+          ),
           Page4(
+            key: portfolioKey,
             controller: controller,
             smallPage: ResponsiveHelper.isSmallScreen(context),
           ),
           Page5(
+            key: contactKey,
             controller: controller,
             smallPage: ResponsiveHelper.isSmallScreen(context),
           ),

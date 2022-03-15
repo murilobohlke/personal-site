@@ -25,13 +25,13 @@ class Page5 extends StatelessWidget {
           const SizedBox(height: 75),
           letsTalk(
             size,
-            smallPage ? SiteTextStyles.h6Normal : SiteTextStyles.h4Normal,
-            smallPage ? SiteTextStyles.h6Bold : SiteTextStyles.h4Bold,
+            smallPage ? SiteTextStyles.h6Normal : SiteTextStyles.h5Normal,
+            smallPage ? SiteTextStyles.h6Bold : SiteTextStyles.h5Bold,
           ),
           const SizedBox(height: 75),
           moreInfo(
-            smallPage ? SiteTextStyles.pNormal : SiteTextStyles.h5Normal,
-            smallPage ? SiteTextStyles.pBold : SiteTextStyles.h5Bold,
+            smallPage ? SiteTextStyles.pNormal : SiteTextStyles.h6Normal,
+            smallPage ? SiteTextStyles.pBold : SiteTextStyles.h6Bold,
           ),
           const SizedBox(height: 70),
           footer(
