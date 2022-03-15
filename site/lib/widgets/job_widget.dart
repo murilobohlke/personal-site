@@ -12,8 +12,10 @@ class JobWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+
     return SizedBox(
-      width: 375,
+      width: size.width < 800 && !smallPage ? 320 : 375,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

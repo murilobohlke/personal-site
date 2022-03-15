@@ -6,7 +6,11 @@ class SiteTexts {
   static const String page2Text4 = 'Engenheiro de Computação';
   static const String page2Text5 =
       ' formado pela Universidade Federeal de Pelotas e trabalho atualmente com ';
-  static const String page2Text6 = 'Flutter.';
+  static const String page2Text6 = 'Flutter. ';
+  static const String page2Text7 = 'A seguir estão algumas ';
+  static const String page2Text8 = 'tecnologias';
+  static const String page2Text9 =
+      ' nas quais já trabalhei e tenho algum conhecimento:';
 
   static const String page4Text1 =
       'Aqui estão algumas telas de aplicativos que ';

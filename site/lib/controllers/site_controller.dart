@@ -11,7 +11,7 @@ class SiteController {
   }
 
   Future<void> launchFigma() async {
-    if (!await launch('https://www.linkedin.com/in/murilobohlke/')) {
+    if (!await launch('https://www.figma.com/@murilobohlke')) {
       debugPrint('Could not launch Figma');
     }
   }

@@ -45,6 +45,12 @@ class Page2 extends StatelessWidget {
                     text: SiteTexts.page2Text6,
                     style: SiteTextStyles.pBold,
                   ),
+                  const TextSpan(text: SiteTexts.page2Text7),
+                  TextSpan(
+                    text: SiteTexts.page2Text8,
+                    style: SiteTextStyles.pBold,
+                  ),
+                  const TextSpan(text: SiteTexts.page2Text9),
                 ],
               ),
               textAlign: TextAlign.center,

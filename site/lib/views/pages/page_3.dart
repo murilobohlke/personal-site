@@ -15,7 +15,7 @@ class Page3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 50),
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 50),
       color: SiteColors.light,
       child: Column(
         children: [
@@ -75,8 +75,7 @@ class Page3 extends StatelessWidget {
                   top: 730,
                   child: IndicatorWidget(
                     number: '3',
-                    background: SiteColors.primary,
-                    textColor: SiteColors.secondary,
+                    isActive: true,
                   ),
                 ),
               ],
@@ -98,31 +97,48 @@ class Page3 extends StatelessWidget {
         ],
       );
 
-  carrerLargePage() => Row(
-        children: [
-          const Spacer(),
-          Expanded(
-            flex: 3,
-            child: Column(
-              children: [
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: JobWidget(jobDummy[0]),
-                ),
-                const SizedBox(height: 40),
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: JobWidget(jobDummy[1]),
-                ),
-                const SizedBox(height: 40),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: JobWidget(jobDummy[2]),
-                ),
-              ],
+  carrerLargePage() => SizedBox(
+        width: 900,
+        height: 800,
+        child: Stack(
+          children: [
+            Positioned(
+              left: 0,
+              top: 0,
+              child: Row(
+                children: [
+                  const IndicatorWidget(number: '1'),
+                  const SizedBox(width: 15),
+                  JobWidget(jobDummy[0]),
+                ],
+              ),
             ),
-          ),
-          const Spacer(),
-        ],
+            Positioned(
+              top: 200,
+              right: 0,
+              child: Row(
+                children: [
+                  const IndicatorWidget(number: '2'),
+                  const SizedBox(width: 15),
+                  JobWidget(jobDummy[1]),
+                ],
+              ),
+            ),
+            Positioned(
+              left: 80,
+              bottom: 0,
+              child: Row(
+                children: [
+                  const IndicatorWidget(
+                    number: '3',
+                    isActive: true,
+                  ),
+                  const SizedBox(width: 15),
+                  JobWidget(jobDummy[2]),
+                ],
+              ),
+            ),
+          ],
+        ),
       );
 }
