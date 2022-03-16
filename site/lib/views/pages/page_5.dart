@@ -47,7 +47,7 @@ class Page5 extends StatelessWidget {
         onPressed: controller.openWhatsapp,
         style: ElevatedButton.styleFrom(
           padding: EdgeInsets.symmetric(
-              vertical: smallPage ? 8 : 20, horizontal: smallPage ? 15 : 30),
+              vertical: smallPage ? 12 : 20, horizontal: smallPage ? 15 : 30),
           primary: SiteColors.tertiary,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(50),

@@ -1,16 +1,15 @@
 class SiteTexts {
-  static const String page2Text1 = 'Meu nome é ';
-  static const String page2Text2 = 'Murilo Steinmetz Böhlke';
+  static const String page2Text1 =
+      'Meu nome é Murilo Steinmetz Böhlke, tenho 24 anos, sou ';
+  static const String page2Text2 = 'Engenheiro de Computação';
   static const String page2Text3 =
-      ', tenho 24 anos e moro em uma pequena cidade no interior de Rio Grande do Sul, chamada São Lourenço do Sul. Sou ';
-  static const String page2Text4 = 'Engenheiro de Computação';
+      ' formado pela Universidade Federeal de Pelotas e trabalho atualmente como desenvolvedor ';
+  static const String page2Text4 = 'Flutter';
   static const String page2Text5 =
-      ' formado pela Universidade Federeal de Pelotas e trabalho atualmente com ';
-  static const String page2Text6 = 'Flutter. ';
-  static const String page2Text7 = 'A seguir estão algumas ';
-  static const String page2Text8 = 'tecnologias';
-  static const String page2Text9 =
-      ' nas quais já trabalhei e tenho algum conhecimento:';
+      '. Sempre gostei de tecnologia e mais para o fim faculdade acabei me encontrando nessa área de desenvolvimento mobile. A seguir estão as ';
+  static const String page2Text6 = 'tecnologias';
+  static const String page2Text7 =
+      ' nas quais já trabalhei e tenho algum certo nível de familiaridade e conhecimento:';
 
   static const String page4Text1 =
       'Aqui estão algumas telas de aplicativos que ';
@@ -19,7 +18,8 @@ class SiteTexts {
       ' Além de trabalhar em projetos profissionais, também tenhos os meus ';
   static const String page4Text4 = 'projetos pessoais';
   static const String page4Text5 =
-      ' que, geralmente utilizo para estudo. Alguns apps viraram produto e estão disponível na ';
+      ' que, geralmente utilizo para estudo. Tenho também uma conta de desenvolvedor no ';
   static const String page4Text6 = 'Google Play Store';
-  static const String page4Text7 = ' para download.';
+  static const String page4Text7 =
+      ', onde alguns apps que viraram produtos estão disponível para download.';
 }

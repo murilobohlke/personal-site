@@ -28,7 +28,7 @@ class _SiteState extends State<Site> with SingleTickerProviderStateMixin {
     return MaterialApp(
       scrollBehavior: MyCustomScrollBehavior(),
       debugShowCheckedModeBanner: false,
-      title: 'Meu site',
+      title: 'Murilo Dev',
       home: AnimatedOpacity(
         duration: const Duration(milliseconds: 600),
         opacity: _opacity,

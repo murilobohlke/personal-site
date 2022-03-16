@@ -4,6 +4,7 @@ import 'package:site/core/site_assets.dart';
 import 'package:site/core/site_texts.dart';
 import 'package:site/theme/site_colors.dart';
 import 'package:site/theme/site_text_styles.dart';
+import 'package:site/widgets/image_card_widget.dart';
 
 import '../../controllers/site_controller.dart';
 
@@ -22,12 +23,12 @@ class Page4 extends StatelessWidget {
       child: Column(
         children: [
           title(),
-          SizedBox(height: smallPage ? 0 : 60),
+          const SizedBox(height: 60),
           smallPage
               ? Column(
                   children: [
                     SizedBox(
-                      width: 250,
+                      height: 650,
                       child: CarouselSlider(
                         options: CarouselOptions(
                           autoPlayInterval: const Duration(seconds: 4),
@@ -36,9 +37,10 @@ class Page4 extends StatelessWidget {
                           height: 600,
                           enableInfiniteScroll: true,
                         ),
-                        items: [Image.asset(SiteAssets.print)],
+                        items: itens(),
                       ),
                     ),
+                    const SizedBox(height: 50),
                     text(SiteTextStyles.pNormal, SiteTextStyles.pBold),
                     const SizedBox(height: 50),
                     buttonGooglePlay(175),
@@ -47,17 +49,20 @@ class Page4 extends StatelessWidget {
               : Row(
                   children: [
                     const Spacer(),
-                    SizedBox(
-                      width: 300,
-                      child: CarouselSlider(
-                        options: CarouselOptions(
-                          autoPlayInterval: const Duration(seconds: 4),
-                          viewportFraction: 1,
-                          autoPlay: true,
-                          height: 600,
-                          enableInfiniteScroll: true,
+                    Expanded(
+                      flex: 3,
+                      child: SizedBox(
+                        height: 650,
+                        child: CarouselSlider(
+                          options: CarouselOptions(
+                            autoPlayInterval: const Duration(seconds: 4),
+                            viewportFraction: 1,
+                            autoPlay: true,
+                            height: 600,
+                            enableInfiniteScroll: true,
+                          ),
+                          items: itens(),
                         ),
-                        items: [Image.asset(SiteAssets.print)],
                       ),
                     ),
                     const Spacer(),
@@ -122,4 +127,17 @@ class Page4 extends StatelessWidget {
           width: w,
         ),
       );
+
+  itens() => const [
+        ImageCardWidget('assets/prints/print-1.png'),
+        ImageCardWidget('assets/prints/print-2.png'),
+        ImageCardWidget('assets/prints/print-3.png'),
+        ImageCardWidget('assets/prints/print-4.png'),
+        ImageCardWidget('assets/prints/print-5.png'),
+        ImageCardWidget('assets/prints/print-6.png'),
+        ImageCardWidget('assets/prints/print-7.png'),
+        ImageCardWidget('assets/prints/print-8.png'),
+        ImageCardWidget('assets/prints/print-9.png'),
+        ImageCardWidget('assets/prints/print-10.png'),
+      ];
 }
