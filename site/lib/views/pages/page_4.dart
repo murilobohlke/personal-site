@@ -17,6 +17,8 @@ class Page4 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 50),
       color: SiteColors.secondaryLess,
@@ -27,18 +29,15 @@ class Page4 extends StatelessWidget {
           smallPage
               ? Column(
                   children: [
-                    SizedBox(
-                      height: 650,
-                      child: CarouselSlider(
-                        options: CarouselOptions(
-                          autoPlayInterval: const Duration(seconds: 4),
-                          viewportFraction: 1,
-                          autoPlay: true,
-                          height: 600,
-                          enableInfiniteScroll: true,
-                        ),
-                        items: itens(),
+                    CarouselSlider(
+                      options: CarouselOptions(
+                        autoPlayInterval: const Duration(seconds: 4),
+                        viewportFraction: 1,
+                        autoPlay: true,
+                        height: 500,
+                        enableInfiniteScroll: true,
                       ),
+                      items: itens(),
                     ),
                     const SizedBox(height: 50),
                     text(SiteTextStyles.pNormal, SiteTextStyles.pBold),
@@ -51,18 +50,15 @@ class Page4 extends StatelessWidget {
                     const Spacer(),
                     Expanded(
                       flex: 3,
-                      child: SizedBox(
-                        height: 650,
-                        child: CarouselSlider(
-                          options: CarouselOptions(
-                            autoPlayInterval: const Duration(seconds: 4),
-                            viewportFraction: 1,
-                            autoPlay: true,
-                            height: 600,
-                            enableInfiniteScroll: true,
-                          ),
-                          items: itens(),
+                      child: CarouselSlider(
+                        options: CarouselOptions(
+                          autoPlayInterval: const Duration(seconds: 4),
+                          viewportFraction: 1,
+                          autoPlay: true,
+                          height: size.width < 800 ? 500 : 600,
+                          enableInfiniteScroll: true,
                         ),
+                        items: itens(),
                       ),
                     ),
                     const Spacer(),

@@ -49,10 +49,10 @@ class Page1 extends StatelessWidget {
                       children: [
                         Lottie.asset(
                           SiteAssets.lottieCoding,
-                          height: 350,
-                          width: 350,
+                          height: 300,
+                          width: 300,
                         ),
-                        const SizedBox(height: 40),
+                        const SizedBox(height: 30),
                         SelectableText(
                           'MURILO BÖHLKE',
                           style: SiteTextStyles.h1Bold,
@@ -61,7 +61,7 @@ class Page1 extends StatelessWidget {
                           'Desenvolvedor Mobile',
                           style: SiteTextStyles.h4Normal,
                         ),
-                        const SizedBox(height: 40),
+                        const SizedBox(height: 20),
                         ElevatedButton(
                           child: Text(
                             'Conhecer',
@@ -164,8 +164,8 @@ class Page1 extends StatelessWidget {
       );
 
   tabBar() => Positioned(
-        right: 60,
-        top: 40,
+        right: 40,
+        top: 20,
         child: Row(
           children: [
             CustomTextButton(

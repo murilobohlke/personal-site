@@ -96,7 +96,7 @@ class Page3 extends StatelessWidget {
 
   carrerLargePage() => SizedBox(
         width: 900,
-        height: 800,
+        height: 875,
         child: Stack(
           children: [
             Positioned(
@@ -123,7 +123,7 @@ class Page3 extends StatelessWidget {
             ),
             Positioned(
               left: 80,
-              bottom: 0,
+              top: 425,
               child: Row(
                 children: [
                   const IndicatorWidget(

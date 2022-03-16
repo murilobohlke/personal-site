@@ -34,10 +34,7 @@ class Page5 extends StatelessWidget {
             smallPage ? SiteTextStyles.pBold : SiteTextStyles.h6Bold,
           ),
           const SizedBox(height: 70),
-          footer(
-            smallPage ? SiteTextStyles.sNormal : SiteTextStyles.pNormal,
-            smallPage ? SiteTextStyles.sBold : SiteTextStyles.pBold,
-          ),
+          footer(SiteTextStyles.sNormal, SiteTextStyles.sBold),
         ],
       ),
     );
@@ -199,10 +196,10 @@ class Page5 extends StatelessWidget {
 
   footer(TextStyle normal, TextStyle bold) => Container(
         color: SiteColors.secondaryLess,
-        height: 45,
+        height: 35,
         child: Row(
           children: [
-            const SizedBox(width: 50),
+            const SizedBox(width: 30),
             Expanded(
               child: SelectableText.rich(
                 TextSpan(
@@ -219,7 +216,7 @@ class Page5 extends StatelessWidget {
               ),
             ),
             SizedBox(
-              width: 50,
+              width: 30,
               child: Image.asset(
                 SiteAssets.imageFlutterLogo,
               ),
