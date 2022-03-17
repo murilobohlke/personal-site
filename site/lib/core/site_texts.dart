@@ -3,10 +3,10 @@ class SiteTexts {
       'Meu nome é Murilo Steinmetz Böhlke, tenho 24 anos, sou ';
   static const String page2Text2 = 'Engenheiro de Computação';
   static const String page2Text3 =
-      ' formado pela Universidade Federeal de Pelotas e trabalho atualmente como desenvolvedor ';
+      ' formado pela Universidade Federal de Pelotas e trabalho atualmente como desenvolvedor ';
   static const String page2Text4 = 'Flutter';
   static const String page2Text5 =
-      '. Sempre gostei de tecnologia e mais para o fim faculdade acabei me encontrando nessa área de desenvolvimento mobile. A seguir estão as ';
+      '. Sempre gostei de tecnologia e no último ano de faculdade acabei me encontrando nessa área de desenvolvimento mobile. A seguir estão as ';
   static const String page2Text6 = 'tecnologias';
   static const String page2Text7 =
       ' nas quais já trabalhei e tenho algum certo nível de familiaridade e conhecimento:';

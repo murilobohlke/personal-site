@@ -23,6 +23,6 @@ final jobDummy = [
     profession: 'Desenvolvedor Flutter',
     time: 'NOV 2021 - presente',
     description:
-        'Atualmente trabalho diariamente com Flutter. A mundança para essa empresa foi um grande marco na minha carreira para me tornar um profissional melhor. Aprendi a trabalhar com gerência de estados mais poderosa, testes, animações, injeção de dependências e Flutter Web. Nessa empresa também experimentei e trabalhei um pouco com backend.',
+        'Atualmente trabalho diariamente com Flutter. A mudança para essa empresa foi um grande marco na minha carreira para me tornar um profissional melhor. Aprendi a trabalhar com gerência de estados mais poderosa, testes, animações, injeção de dependências e Flutter Web. Nessa empresa também experimentei e trabalhei um pouco com backend.',
   ),
 ];
