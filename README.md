@@ -12,7 +12,7 @@ O objetivo do desenvolvimento deste site foi testar de uma maneira prática o Fl
 
 O layout pode ser visualizado no seguinte link: https://www.figma.com/community/file/1105858789079418401
 
-# Como Utilizar?
+## Como utilizar?
 
 ~~~
 - Clonar o repositório:
