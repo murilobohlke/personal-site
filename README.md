@@ -10,7 +10,23 @@ O objetivo do desenvolvimento deste site foi testar de uma maneira prática o Fl
 
 ## Layout
 
-O layout pode ser visualizado no seguinte link:https://www.figma.com/community/file/1105858789079418401
+O layout pode ser visualizado no seguinte link: https://www.figma.com/community/file/1105858789079418401
+
+# Como Utilizar?
+
+~~~
+- Clonar o repositório:
+$ git clone https://github.com/murilobohlke/personal-site.git
+
+- Entrar no diretório:
+$ cd personal-site/site
+
+- Instalar as dependências:
+$ flutter pub get
+
+- Iniciar o app: 
+$ flutter run
+~~~
 
 ## Tecnologias utilizadas
 
